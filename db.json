@@ -1,7 +1,40 @@
 {
-    "cafeteria":[
-        {
-            
-        }
-    ]
+  "cafeteria": [
+    {
+      "id": 1,
+      "nombreProducto": "Cafe",
+      "precio": 85.99,
+      "categoria:": "Bebida Caliente"
+    },
+    {
+      "id": 2,
+      "nombreProducto": "Medialunas",
+      "precio": 39.99,
+      "categoria:": "Salado"
+    },
+    {
+      "id": 3,
+      "nombreProducto": "Sanwich Jamon y Queso",
+      "precio": 80,
+      "categoria:": "Salado"
+    },
+    {
+      "nombreProducto": "Chocolatada",
+      "precio": 89,
+      "categoria": "Bebida Fria",
+      "id": 4
+    },
+    {
+      "nombreProducto": "Capuccino",
+      "precio": 95,
+      "categoria": "Bebida Caliente",
+      "id": 5
+    },
+    {
+      "nombreProducto": "cacaa",
+      "precio": 324234,
+      "categoria": "Bebida Caliente",
+      "id": 6
+    }
+  ]
 }
