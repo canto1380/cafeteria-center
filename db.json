@@ -19,22 +19,22 @@
       "categoria:": "Salado"
     },
     {
-      "nombreProducto": "Chocolatada",
-      "precio": 89,
-      "categoria": "Bebida Fria",
-      "id": 4
-    },
-    {
       "nombreProducto": "Capuccino",
-      "precio": 95,
+      "precio": "90",
       "categoria": "Bebida Caliente",
       "id": 5
     },
     {
-      "nombreProducto": "cacaa",
-      "precio": 324234,
-      "categoria": "Bebida Caliente",
+      "nombreProducto": "Licuado de durazno",
+      "precio": 250,
+      "categoria": "Bebida Fria",
       "id": 6
+    },
+    {
+      "nombreProducto": "Media con dulce de leche",
+      "precio": "100",
+      "categoria": "Salado",
+      "id": 7
     }
   ]
 }

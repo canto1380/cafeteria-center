@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { Button, Container, Form, Alert } from 'react-bootstrap';
 import Swal from 'sweetalert2'
 
-const AgregarProducto = () => {
+const AgregarProducto = (props) => {
+    const {consultarAPI} = props;
+
     const url = process.env.REACT_APP_API_URL;
-    console.log(url)
     const [nombreProd, setNombreProd] = useState('')
     const [precio, setPrecio] = useState(0)
     const [categoria, setCategoria] = useState('')
@@ -49,6 +50,7 @@ const AgregarProducto = () => {
                         'El producto ingresado se agrego correctamente!',
                         'success'
                       )
+                      consultarAPI()
                 }
             } catch (error) {
                 console.log(error)
