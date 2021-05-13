@@ -3,7 +3,7 @@ import { Button, Container, Form, Alert } from 'react-bootstrap';
 import Swal from 'sweetalert2'
 
 const AgregarProducto = (props) => {
-    const {consultarAPI} = props;
+    const {setConsultaProd} = props;
 
     const url = process.env.REACT_APP_API_URL;
     const [nombreProd, setNombreProd] = useState('')
@@ -50,7 +50,7 @@ const AgregarProducto = (props) => {
                         'El producto ingresado se agrego correctamente!',
                         'success'
                       )
-                      consultarAPI()
+                      setConsultaProd(true)
                 }
             } catch (error) {
                 console.log(error)

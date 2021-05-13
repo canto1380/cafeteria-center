@@ -6,7 +6,7 @@ import {useParams, withRouter} from 'react-router-dom'
 import {campoRequerido, rangoPrecio} from './helpers/helpers'
 
 const EditarProducto = (props) => {
-    const {consultarAPI} = props
+    const {setConsultaProd} = props
 
     // Variables state
     const [categoria, setCategoria] = useState('')
@@ -64,7 +64,7 @@ const EditarProducto = (props) => {
                         'El producto se modifico correctamente!',
                         'success'
                       )
-                      consultarAPI()
+                      setConsultaProd(true)
                       props.history.push('/productos')
                 }
             } catch (error) {

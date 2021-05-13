@@ -13,26 +13,27 @@ import Error404 from './components/Error404';
 
 function App() {
   const url = process.env.REACT_APP_API_URL
-const [productos, setProductos] = useState([]);
+  /* consulta productos */
+  const [productos, setProductos] = useState([]);
+  const [consultaProd, setConsultaProd] =useState(true)
 
 useEffect(() => {
-  
+  const consultarAPI = async() =>{
+    try {
+      const res = await fetch(url)
+      const infor = await res.json()
+      if(res.status ===200){
+        setProductos(infor)
+        setConsultaProd(false)
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
   consultarAPI()
   
-},[])
-const consultarAPI = async() =>{
-  try {
-    const res = await fetch(url)
-    const infor = await res.json()
-    console.log(res)
-    if(res.status ===200){
-      setProductos(infor)
-      console.log(infor)
-    }
-  } catch (error) {
-    console.log(error)
-  }
-}
+},[consultaProd])
+
   return (
     <Router>
       <Navegacion/>
@@ -43,17 +44,17 @@ const consultarAPI = async() =>{
         />
         <Route exact path='/productos' component={()=>
           <ListaProductos productos={productos}
-                          consultarAPI={consultarAPI}
+                          setConsultaProd={setConsultaProd}
           />
         } 
         />
         <Route exact path='/productos/agregar' component={()=>
-          <AgregarProducto consultarAPI={consultarAPI}
+          <AgregarProducto setConsultaProd={setConsultaProd}
           />
         } 
         />
         <Route exact path='/productos/editar/:id' component={()=>
-          <EditarProducto consultarAPI={consultarAPI}
+          <EditarProducto setConsultaProd={setConsultaProd}
           />
         } 
         />

@@ -37,7 +37,7 @@ const ItemProducto = (props) => {
                         'success'
                       )
                     // actualizar los datos de la lista de productos
-                    props.consultarAPI();
+                    props.setConsultaProd(true);
                 } 
 
                }catch(error){
