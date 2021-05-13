@@ -3,7 +3,7 @@ import { Button, Container, Form, Alert } from 'react-bootstrap';
 import Swal from 'sweetalert2'
 import {useParams, withRouter} from 'react-router-dom'
 
-import {campoRequerido, rangoPrecio, rangoValor} from './helpers/helpers'
+import {campoRequerido, rangoPrecio} from './helpers/helpers'
 
 const EditarProducto = (props) => {
     const {consultarAPI} = props
@@ -21,20 +21,21 @@ const EditarProducto = (props) => {
 
 
     useEffect(() => {
+        const consultarProducto = async()=>{
+            try {
+                const res = await fetch(url)
+                console.log(res)
+                if(res.status === 200){
+                    const resp = await res.json();
+                    setProducto(resp);
+                }
+            } catch (error) {
+                console.log(error)
+            }
+        }
         consultarProducto()
     }, [])
-    const consultarProducto = async()=>{
-        try {
-            const res = await fetch(url)
-            console.log(res)
-            if(res.status === 200){
-                const resp = await res.json();
-                setProducto(resp);
-            }
-        } catch (error) {
-            console.log(error)
-        }
-    }
+    
 
     const handleCategoria = (e) => {
         setCategoria(e.target.value)
