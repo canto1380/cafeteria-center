@@ -14,7 +14,7 @@ const EditarProducto = (props) => {
     const [error, setError] = useState(false)
     // const id = useParams().id
     const {id} = useParams();
-    const url = process.env.REACT_APP_API_URL+'/'+id
+    let url = process.env.REACT_APP_API_URL+'/'+id
     //  Variables ref
     const nombreRef = useRef("")
     const precioRef = useRef(0)

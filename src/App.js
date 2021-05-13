@@ -12,7 +12,7 @@ import EditarProducto from './components/EditarProducto';
 import Error404 from './components/Error404';
 
 function App() {
-  const url = process.env.REACT_APP_API_URL
+  let url = process.env.REACT_APP_API_URL
   /* consulta productos */
   const [productos, setProductos] = useState([]);
   const [consultaProd, setConsultaProd] =useState(true)
