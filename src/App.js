@@ -16,23 +16,23 @@ function App() {
 const [productos, setProductos] = useState([]);
 
 useEffect(() => {
-  const consultarAPI = async() =>{
-    try {
-      const res = await fetch(url)
-      const infor = await res.json()
-      console.log(res)
-      if(res.status ===200){
-        setProductos(infor)
-        console.log(infor)
-      }
-    } catch (error) {
-      console.log(error)
-    }
-  }  
+  
   consultarAPI()
   
 },[])
-
+const consultarAPI = async() =>{
+  try {
+    const res = await fetch(url)
+    const infor = await res.json()
+    console.log(res)
+    if(res.status ===200){
+      setProductos(infor)
+      console.log(infor)
+    }
+  } catch (error) {
+    console.log(error)
+  }
+}
   return (
     <Router>
       <Navegacion/>
