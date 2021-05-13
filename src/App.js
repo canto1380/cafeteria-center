@@ -18,21 +18,21 @@ function App() {
   const [consultaProd, setConsultaProd] =useState(true)
 
 useEffect(() => {
-  const consultarAPI = async() =>{
-    try {
-      const res = await fetch(url)
-      const infor = await res.json()
-      if(res.status ===200){
-        setProductos(infor)
-        setConsultaProd(false)
-      }
-    } catch (error) {
-      console.log(error)
+  consultarAPI()  
+},[])
+
+const consultarAPI = async() =>{
+  try {
+    const res = await fetch(url)
+    const infor = await res.json()
+    if(res.status ===200){
+      setProductos(infor)
+      setConsultaProd(false)
     }
+  } catch (error) {
+    console.log(error)
   }
-  consultarAPI()
-  
-},[consultaProd])
+}
 
   return (
     <Router>
